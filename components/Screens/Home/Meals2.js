@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Button } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Image } from 'react-native';
@@ -30,7 +30,14 @@ const Meals2 = () => {
     if (items !== null) {
         return (
             <View style={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 20, color: 'black' }}>{name}</Text>
+                <View style={{ padding: 20, backgroundColor: 'orange', width: '90%', borderRadius: 10, marginBottom: 2, flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ width: '75%', alignItems: 'center' }}>
+                        <Text style={{ fontSize: 20, color: 'black' }}>{name}</Text>
+                    </View>
+                    <TouchableOpacity onPress={() => navigation.goBack()} style={{ paddingHorizontal: 25, paddingVertical: 8, backgroundColor: 'white', borderRadius: 5, }}>
+                        <Text>Back</Text>
+                    </TouchableOpacity>
+                </View>
                 <ScrollView showsVerticalScrollIndicator={false} style={{ width: '100%', alignSelf: 'center' }}>
                     {items.map((item, index) => (
                         <TouchableOpacity onPress={() => navigation.navigate('Details2', { item: item })} key={index}>
