@@ -10,7 +10,6 @@ A JavaScript program that provides food recipes from around the world.
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
